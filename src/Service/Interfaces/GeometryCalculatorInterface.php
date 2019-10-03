@@ -6,7 +6,7 @@ namespace App\Service\Interfaces;
 
 interface GeometryCalculatorInterface
 {
-    public function sumSurface();
+    public function sumSurface(float $a, float $b, float $c, float $radius): float;
 
-    public function sumCircumference();
+    public function sumCircumference(float $a, float $b, float $c, float $radius): float;
 }
