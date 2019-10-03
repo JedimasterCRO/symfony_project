@@ -1,35 +1,37 @@
 <?php
 
-
 namespace App\Models;
 
+use App\Models\Interfaces\ShapeInterface;
 
-class Circle
+class Circle implements ShapeInterface
 {
     /**
-     * sum circle surface
-     *
-     * @param float $radius
+     * @var float
+     */
+    private $radius;
+
+    public function __construct(float $radius)
+    {
+        $this->radius = $radius;
+    }
+
+    /**
      * @return float
      */
-    public function sumObjectSurface(float $radius)
+    public function sumObjectSurface(): float
     {
-        $pi = 3.14;
-        $result = pow($radius, 2) * $pi;
+        $result = pow($this->radius, 2) * pi();
 
         return round($result, 2);
     }
 
     /**
-     * sum circle circumference
-     *
-     * @param float $radius
      * @return float
      */
-    public function sumObjectCircumference(float $radius)
+    public function sumObjectCircumference(): float
     {
-        $pi = 3.14;
-        $result = 2 * $radius * $pi;
+        $result = 2 * $this->radius * pi();
 
         return round($result, 2);
     }

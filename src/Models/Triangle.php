@@ -1,15 +1,33 @@
 <?php
 
-
 namespace App\Models;
 
+use App\Models\Interfaces\ShapeInterface;
 
-class Triangle
+class Triangle implements ShapeInterface
 {
-    public function sumObjectSurface(float $a, float $b, float $c)
+    protected $a;
+    protected $b;
+    protected $c;
+
+    /**
+     * Triangle constructor.
+     *
+     * @param float $a
+     * @param float $b
+     * @param float $c
+     */
+    public function __construct(float $a, float $b, float $c)
     {
-        $x = ($a + $b + $c) / 2;
-        $surface = sqrt($x * ($x - $a) * ($x - $b) * ($x - $c));
+        $this->a = $a;
+        $this->b = $b;
+        $this->c = $c;
+    }
+
+    public function sumObjectSurface(): float
+    {
+        $x = ($this->a + $this->b + $this->c) / 2;
+        $surface = sqrt($x * ($x - $this->a) * ($x - $this->b) * ($x - $this->c));
 
         if (is_nan($surface)) {
             $surface = 0;
@@ -18,8 +36,8 @@ class Triangle
         return round($surface, 2);
     }
 
-    public function sumObjectCircumference(float $a, float $b, float $c)
+    public function sumObjectCircumference(): float
     {
-        return round($a + $b + $c, 2);
+        return round($this->a + $this->b + $this->c, 2);
     }
 }

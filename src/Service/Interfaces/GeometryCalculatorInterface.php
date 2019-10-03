@@ -1,12 +1,12 @@
 <?php
 
-
 namespace App\Service\Interfaces;
 
+use App\Models\Interfaces\ShapeInterface;
 
 interface GeometryCalculatorInterface
 {
-    public function sumSurface(float $a, float $b, float $c, float $radius): float;
+    public function objectSurface(ShapeInterface ...$shapes): float;
 
-    public function sumCircumference(float $a, float $b, float $c, float $radius): float;
+    public function objectCircumference(ShapeInterface ...$shapes): float;
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller;
-
 
 use App\Models\Circle;
 use App\Models\Triangle;
@@ -11,16 +9,15 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class BaseController extends AbstractController
 {
-    public function circle(float $radius, Circle $circle)
+    public function circle(float $radius)
     {
-        $surface = $circle->sumObjectSurface($radius);
-        $circumference = $circle->sumObjectCircumference($radius);
+        $circle = new Circle($radius);
 
         $data = [
             'type'          => 'circle',
             'radius'        => $radius,
-            'surface'       => $surface,
-            'circumference' => $circumference
+            'surface'       => $circle->sumObjectSurface(),
+            'circumference' => $circle->sumObjectCircumference()
         ];
 
         $response = new JsonResponse($data);
@@ -28,18 +25,17 @@ class BaseController extends AbstractController
         return $response;
     }
 
-    public function triangle(float $a, float $b, float $c, Triangle $triangle)
+    public function triangle(float $a, float $b, float $c)
     {
-        $surface = $triangle->sumObjectSurface($a, $b, $c);
-        $circumference = $triangle->sumObjectCircumference($a, $b, $c);
+        $triangle = new Triangle($a, $b, $c);
 
         $data = [
             'type'          => 'triangle',
             'a'             => $a,
             'b'             => $b,
             'c'             => $c,
-            'surface'       => $surface,
-            'circumference' => $circumference
+            'surface'       => $triangle->sumObjectSurface(),
+            'circumference' => $triangle->sumObjectCircumference()
         ];
 
         $response = new JsonResponse($data);
