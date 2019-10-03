@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Lokalni server">
+    <serverData>
+      <paths name="E dnevnik">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Lokalni server">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="symfony-demo.local" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="es-ucenici.test">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
