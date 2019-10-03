@@ -1,3 +1,9 @@
-index:
-    path: /
-    controller: App\Controller\BaseController::index
+circle:
+    path: /circle/{radius}
+    controller: App\Controller\BaseController::circle
+    methods: GET|HEAD
+
+triangle:
+    path: /triangle/{a}/{b}/{c}
+    controller: App\Controller\BaseController::triangle
+    methods: GET|HEAD

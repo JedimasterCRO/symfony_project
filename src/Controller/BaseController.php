@@ -5,15 +5,18 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 
 class BaseController extends AbstractController
 {
-    public function index()
+    public function circle(float $radius)
     {
-        $ime = 'Goran';
-        $prezime = 'Vinković';
+        dump($radius);
+        die();
+    }
 
-        return $this->render('first.html.twig', compact('ime', 'prezime'));
+    public function triangle(float $a, float $b, float $c)
+    {
+        dump($a, $b, $c);
+        die();
     }
 }
